@@ -1,0 +1,3 @@
+src
+
+# node_modules is default ignored by npm so no need to add it here
