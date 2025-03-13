@@ -8,6 +8,7 @@
     "@piyush_26/blog-common": "^1.0.0",
     "@prisma/client": "^6.5.0",
     "@prisma/extension-accelerate": "^1.2.2",
+    "cors": "^2.8.5",
     "hono": "^4.7.4",
     "prisma": "^6.5.0"
   },
