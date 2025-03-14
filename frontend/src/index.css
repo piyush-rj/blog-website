@@ -1,1 +1,6 @@
 @import "tailwindcss";
+.ProseMirror {
+    outline: none !important; /* Removes focus border */
+    border: none !important;  /* Ensures no inner border */
+    min-height: 200px;        /* Keeps height without content */
+}

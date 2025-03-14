@@ -19,12 +19,12 @@ interface TextProps {
         {text}
       </button>
 
-      {hover && (
+      {/* {hover && (
         <div className="absolute left-[671px] font-semibold rounded-sm transform -translate-x-1/2 mt-2  w-max bg-white text-black 
            pl-1 pr-1 shadow-lg border border-black transition-all duration-500">
           BLOGGING SIMPLIFIED
         </div>
-      )}
+      )} */}
       </div>
     );
   };

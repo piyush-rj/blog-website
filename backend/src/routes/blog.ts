@@ -26,7 +26,7 @@ blogRouter.use("/*", async (c, next) => {
         c.set("userId", user.id);
         await next();
     } else {
-        c.status(403);
+        c.status(411);
         return c.json({
             message: "you are not logged in"
         })
@@ -110,7 +110,18 @@ blogRouter.get("/bulk", async (c) => {
     datasourceUrl: c.env?.DATABASE_URL,
     }).$extends(withAccelerate())
 
-    const blogs = await prisma.posts.findMany();
+    const blogs = await prisma.posts.findMany({
+        select: {
+            content: true,
+            title: true,
+            id: true,
+            author: {
+                select: {
+                    name: true
+                }
+            }
+        }
+    });
 
     return c.json({
         blogs
@@ -129,6 +140,16 @@ blogRouter.get("/:id", async (c) => {
         const blog = await prisma.posts.findFirst({
             where: {
                 id: Number(id)
+            },
+            select: {
+                id: true,
+                title: true,
+                content: true,
+                author: {
+                    select: {
+                        name: true
+                    }
+                }
             }
         })
         return c.json({

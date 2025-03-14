@@ -13,7 +13,7 @@ const InputBox = ({placeholder, heading, onChange, type}: PlaceholderProps) => {
 
   return (
     <div>
-        <div className=" mt-5 mb-1 flex justify-start items-center pl-10 text-[22px]">
+        <div className=" mt-5 mb-1 flex justify-start items-center pl-1 text-[20px]">
           {heading}
         </div>
     <div className="flex justify-center items-center">
