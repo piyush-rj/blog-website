@@ -9,7 +9,8 @@ export interface Blog {
     "id": number,
     "author": {
         name: string
-    }
+    },
+    "about": string
 }
 
 

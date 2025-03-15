@@ -22,13 +22,28 @@ const Signup = () => {
         `${BACKEND_URL}/api/v1/user/signup`,
         postInputs
       );
-      const jwt = response.data;
+  
+      // Extract token correctly
+      const jwt = response.data.token; // Ensure backend sends { token: "your_jwt" }
+  
+      if (!jwt) {
+        throw new Error("Token missing in response");
+      }
+  
+      // Store in localStorage
       localStorage.setItem("token", jwt);
+      console.log("✅ Token stored:", jwt);
+  
+      // Redirect to blogs
       navigate("/blogs");
     } catch (error) {
+      console.error("❌ Signup error:");
       alert("Error while signing up");
     }
   }
+  
+  
+  
 
   return (
     <div>
@@ -37,7 +52,7 @@ const Signup = () => {
 
       {/* Main Container */}
       <div className="h-screen w-screen bg-black text-white flex justify-center items-center">
-        <div className="h-[550px] border border-white w-[420px] flex flex-col items-center py-6 px-8">
+        <div className="h-[640px] border border-white w-[420px] flex flex-col items-center py-4 px-8 mt-4">
           
           {/* Heading */}
           <h2 className="text-3xl font-semibold mt-3 mb-1">Create your account</h2>

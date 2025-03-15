@@ -4,7 +4,6 @@ interface BlogCardProps {
     authorName: string,
     title: string,
     content: string,
-    publishedDate: string
     id: number
 }
 
@@ -19,7 +18,6 @@ const BlogCard = ({
     authorName,
     title,
     content,
-    publishedDate
 }: BlogCardProps) => {
 
 return <Link to={`/blog/${id}`}>
@@ -36,7 +34,7 @@ return <Link to={`/blog/${id}`}>
                     <Circle/>
                 </div>
                 <div className=" font-light text-[16px] pl-2 text-slate-500 ">
-                    {publishedDate}
+                    date
                 </div>
 
             </div>

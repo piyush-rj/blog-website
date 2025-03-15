@@ -1,61 +1,28 @@
-import { useEditor, EditorContent } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Underline from "@tiptap/extension-underline";
-import Placeholder from "@tiptap/extension-placeholder";
+import { useState } from "react";
 
 const TextEditor = ({ onChange }: { onChange: (content: string) => void }) => {
-  const editor = useEditor({
-    extensions: [
-      StarterKit,
-      Underline,
-      Placeholder.configure({
-        placeholder: "Write your thoughts...",
-      }),
-    ],
-    content: "", // Empty initially
-    onUpdate: ({ editor }) => {
-      onChange(editor.getHTML()); // Send updated content to parent component
-    },
-  });
+  const [text, setText] = useState("");
 
-  if (!editor) return null;
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(event.target.value);
+    onChange(event.target.value); // Send updated content to parent component
+  };
 
   return (
     <div className="pt-8 flex justify-center w-full">
       <div className="w-full max-w-screen-xl p-4">
         {/* Toolbar */}
         <div className="flex space-x-4 pb-2">
-          <button
-            onClick={() => editor.chain().focus().toggleBold().run()}
-            className={`text-xl cursor-pointer font-bold ${
-              editor.isActive("bold") ? "text-gray-800" : "text-gray-500"
-            }`}
-          >
-            B
-          </button>
-          <button
-            onClick={() => editor.chain().focus().toggleItalic().run()}
-            className={`text-xl cursor-pointer italic ${
-              editor.isActive("italic") ? "text-gray-800" : "text-gray-500"
-            }`}
-          >
-            I
-          </button>
-          <button
-            onClick={() => editor.chain().focus().toggleUnderline().run()}
-            className={`text-xl cursor-pointer underline ${
-              editor.isActive("underline") ? "text-gray-800" : "text-gray-500"
-            }`}
-          >
-            U
-          </button>
+          {/* You can remove this part or add any other basic button if needed */}
         </div>
 
         {/* Editor */}
         <div className="border border-gray-300 rounded p-2">
-          <EditorContent
-            editor={editor}
+          <textarea
+            value={text}
+            onChange={handleChange}
             className="w-full min-h-[200px] p-2 focus:outline-none text-[#bfbfbf]"
+            placeholder="Write your thoughts..."
           />
         </div>
       </div>
