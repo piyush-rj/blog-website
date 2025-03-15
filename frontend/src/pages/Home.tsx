@@ -3,12 +3,12 @@ import Hero from "../HomePage/Hero";
 
 const Home = () => {
   return (
-    <>
+    < div className="bg-black min-h-screen">
       <Navbar />
-      <main className="pt-16"> 
+      <div className="mt-[40px]"> 
         <Hero />
-      </main>
-    </>
+      </div>
+    </div>
   );
 };
 
