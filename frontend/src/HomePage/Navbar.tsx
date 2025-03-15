@@ -39,28 +39,7 @@ const Navbar = () => {
                 </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button className="lg:hidden text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
-                {menuOpen ? <FiX /> : <FiMenu />}
-            </button>
-
-            {/* Mobile Menu */}
-            {menuOpen && (
-                <div className="absolute top-16 left-0 w-full bg-black text-white flex flex-col items-center space-y-4 py-4 border-b border-gray-400 lg:hidden">
-                    <div onClick={handleClick} className="cursor-pointer hover:text-gray-300">
-                        <Link to={"/blogs"}>Blogs</Link>
-                    </div>
-                    <div onClick={handleClick} className="cursor-pointer hover:text-gray-300">
-                        Write
-                    </div>
-                    <Link to={"/signup"}>
-                        <Button text="Signup" />
-                    </Link>
-                    <Link to={"/signin"}>
-                        <Button text="Signin" />
-                    </Link>
-                </div>
-            )}
+            
         </div>
     );
 };
