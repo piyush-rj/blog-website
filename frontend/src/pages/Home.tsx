@@ -1,17 +1,15 @@
-import Navbar from "../HomePage/Navbar"
-import Hero from "../HomePage/Hero"
+import Navbar from "../HomePage/Navbar";
+import Hero from "../HomePage/Hero";
 
 const Home = () => {
   return (
-    <div>
-        <div>
-            <Navbar/>
-        </div>
-        <div>
-            <Hero/>
-        </div>
-    </div>
-  )
-}
+    <>
+      <Navbar />
+      <main className="pt-16"> 
+        <Hero />
+      </main>
+    </>
+  );
+};
 
-export default Home
+export default Home;
