@@ -31,7 +31,7 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
                 </div>
               </div>
               <div className="pt-2 text-[18px] text-slate-400 font-mono leading-6">
-                {blog.about}
+                Hey people, This blog is about {blog.title} and is wriitten by {blog.author.name}
               </div>
             </div>
           </div>
