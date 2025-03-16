@@ -36,8 +36,8 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
                 </div>
               </div>
               <div className="pt-2 text-[18px] text-slate-400 font-mono leading-6">
-                Hey people, This blog is about {(blog.title).toUpperCase()} and is written by{" "}
-                {(blog.author?.name).toUpperCase() || "Anonymous"}
+                Hey people, This blog is about <span className="tracking-wide font-semibold font-sans">{(blog.title).toUpperCase()}</span> and is written by <span className="font-semibold font-sans tracking-wide">{(blog.author?.name).toUpperCase() || "Anonymous"}</span>
+                
               </div>
             </div>
           </div>

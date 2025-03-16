@@ -3,7 +3,9 @@ import Appbar from "../components/Appbar";
 import BlogCard from "../components/BlogCard";
 import { useBlogs } from "../hooks";
 
+
 const Blogs = () => {
+
   const { loading, blogs } = useBlogs();
 
   if (loading) {
@@ -11,6 +13,7 @@ const Blogs = () => {
       <SyncLoader />
     </div>;
   }
+
 
   return (
     <div className="bg-black h-screen w-full">

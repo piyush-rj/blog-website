@@ -45,7 +45,7 @@ return <Link to={`/blog/${id}`}>
                     <Circle/>
                 </div>
                 <div className=" font-light text-[16px] pl-2 text-slate-500 ">
-                    posted on {formattedDate}
+                    {formattedDate}
                 </div>
 
             </div>
