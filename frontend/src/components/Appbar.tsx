@@ -5,7 +5,7 @@ import { Blog } from "../hooks"
 const Appbar = ({ blog }: { blog?: Blog }) => {
   return (
     <div >
-      <div className="bg-black h-14 w-full flex justify-between items-center border border-b-gray-400 fixed z-50 backdrop-blur-3xl mb-10">
+      <div className="bg-black h-14 w-full flex justify-between items-center border border-b-gray-400 fixed backdrop-blur-3xl mb-10">
         <div className="flex-3/4 text-white pl-10 text-2xl font-semibold tracking-wide">
             <Link to={"/"}>
                 ByteWords

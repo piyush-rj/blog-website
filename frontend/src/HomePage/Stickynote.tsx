@@ -1,4 +1,6 @@
 import { useState } from "react"
+import "../index.css"
+
 
 interface TextProps {
     text: string,
@@ -6,12 +8,12 @@ interface TextProps {
 
 }
 
-const Stickynote = ({text, para}: TextProps) => {
+const   Stickynote = ({text, para}: TextProps) => {
 
     const [content, setContent] = useState("");
 
   return (
-    <div className="hover:-rotate-1 transition-all duration-200 cursor-pointer">
+    <div id="note" className=" hover:-rotate-1 transition-all duration-200 cursor-pointer">
 
         <svg width="300" height="260" viewBox="0 0 493 473" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="12.7833" y="0.513188" width="479" height="459" rx="15.5" transform="rotate(1.53195 12.7833 0.513188)" fill="#EBEBEB" stroke="black"/>

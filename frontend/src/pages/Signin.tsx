@@ -35,7 +35,7 @@ const Signin = () => {
       <Navbar />
 
       {/* Main Container */}
-      <div className="h-screen w-screen bg-black text-white flex justify-center items-center px-6">
+      <div className="h-screen w-full bg-black text-white flex justify-center items-center px-6">
         <div className="w-full max-w-md border border-white p-6 rounded-md">
           
           {/* Heading */}

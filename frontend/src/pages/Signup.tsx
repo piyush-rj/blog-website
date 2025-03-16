@@ -24,16 +24,11 @@ const Signup = () => {
       );
   
       // Extract token correctly
-      const jwt = response.data.token; // Ensure backend sends { token: "your_jwt" }
-  
-      if (!jwt) {
-        throw new Error("Token missing in response");
-      }
+      const jwt = response.data;
   
       localStorage.setItem("token", jwt);
-      console.log("Token stored:", jwt);
-  
       navigate("/blogs");
+
     } catch (error) {
       console.error("Signup error:");
       alert("Error while signing up");
@@ -49,7 +44,7 @@ const Signup = () => {
       <Navbar />
 
       {/* Main Container */}
-      <div className="h-screen w-screen bg-black text-white flex justify-center items-center">
+      <div className="h-screen w-full bg-black text-white flex justify-center items-center">
         <div className="h-[540px] border border-white w-[420px] flex flex-col items-center py-4 px-8 mt-4">
           
           {/* Heading */}

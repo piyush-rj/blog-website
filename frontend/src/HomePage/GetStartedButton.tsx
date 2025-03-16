@@ -10,7 +10,7 @@ interface TextProps {
 
     return (
       <div>
-        <button className="bg-[#FFB22C] text-black font-semibold p-2 px-8 rounded-md cursor-pointer border-[0.5px]
+        <button className="bg-[#FFB22C] text-black font-semibold p-2 px-8 rounded-md cursor-none border-[0.5px]
         hover:bg-black hover:text-[#FFB22C]
         transition-all duration-300 "
         onMouseEnter={() => setHover(true)}

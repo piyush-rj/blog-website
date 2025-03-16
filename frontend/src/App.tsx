@@ -6,11 +6,13 @@ import Blog from "./pages/Blog"
 import Blogs from "./pages/Blogs"
 import Publish from "./pages/Publish"
 import Error from "./pages/Error"
+import Cursor from "./components/Cursor"
 
 function App() {
 
   return (
     <>
+      <Cursor/>
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<Error/>}/>
