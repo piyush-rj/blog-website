@@ -7,7 +7,7 @@ const Appbar = ({ blog }: { blog?: Blog }) => {
     <div >
       <div className="bg-black h-14 w-full flex justify-between items-center border border-b-gray-400 fixed z-50 backdrop-blur-3xl mb-10">
         <div className="flex-3/4 text-white pl-10 text-2xl font-semibold tracking-wide">
-            <Link to={"/blogs"}>
+            <Link to={"/"}>
                 ByteWords
             </Link>
         </div>

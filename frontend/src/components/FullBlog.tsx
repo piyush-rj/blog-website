@@ -15,7 +15,7 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
               {blog.title}
             </div>
             <div className="text-slate-600 pt-2">
-              Post
+              Posted on March
             </div>
             <div className="pt-4 text-2xl text-[#bfbfbf]">
               {blog.content}

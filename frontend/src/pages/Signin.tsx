@@ -25,7 +25,7 @@ const Signin = () => {
       localStorage.setItem("token", jwt);
       navigate("/blogs");
     } catch (error) {
-      alert("Error while signing in");
+       return alert("Error while signing in");
     }
   }
 
