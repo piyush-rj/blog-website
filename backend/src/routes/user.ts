@@ -67,12 +67,12 @@ userRouter.post("/signin", async (c) => {
     const user = await prisma.user.findUnique({
       where: {
         email: body.email,
-        password: body.password, // Consider hashing passwords instead of storing them as plain text
+        password: body.password,
       },
     });
 
     if (!user) {
-      c.status(403); // Forbidden
+      c.status(403);
       return c.json({ error: "User not found" });
     }
 
@@ -81,7 +81,9 @@ userRouter.post("/signin", async (c) => {
 
   } catch (error) {
     console.error("Signin Error:", error);
-    c.status(500); // Internal Server Error
-    return c.json({ message: "Signin failed", error: error instanceof Error ? error.message : error });
+    c.status(500);
+    return c.json({ 
+      message: "Signin failed", 
+    });
   }
 });

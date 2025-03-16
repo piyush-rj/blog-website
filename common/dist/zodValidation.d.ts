@@ -25,12 +25,15 @@ export declare const signinInput: z.ZodObject<{
 export declare const createBlogInput: z.ZodObject<{
     title: z.ZodString;
     content: z.ZodString;
+    date: z.ZodString;
 }, "strip", z.ZodTypeAny, {
     title: string;
     content: string;
+    date: string;
 }, {
     title: string;
     content: string;
+    date: string;
 }>;
 export declare const updateBlogInput: z.ZodObject<{
     title: z.ZodString;

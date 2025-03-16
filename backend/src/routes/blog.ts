@@ -43,34 +43,57 @@ blogRouter.use("/*", async (c, next) => {
 
 
 blogRouter.post("/", async (c) => {
+    try {
+        const body = await c.req.json();
+        console.log("Received body:", body);
 
-    const body = await c.req.json();
-    const {success} = createBlogInput.safeParse(body);
-
-    if(!success){
-        c.status(411);
-        return c.json({
-            message: "Invalid credentials"
-        })
-    }
-
-    const authorId = c.get("userId");
-    const prisma = new PrismaClient({
-    datasourceUrl: c.env?.DATABASE_URL,
-    }).$extends(withAccelerate())
-
-    const blog = await prisma.posts.create({
-        data: {
-            title: body.title,
-            content: body.content,
-            authorId: Number(authorId)
+        const { success } = createBlogInput.safeParse(body);
+        if (!success) {
+            c.status(411);
+            return c.json({ message: "Inputs not correct" });
         }
-    })
 
-    return c.json({
-        id: blog.id
-    })
-})
+        const authorId = c.get("userId");
+        console.log("Extracted Author ID:", authorId);
+
+        if (!authorId || isNaN(Number(authorId))) {
+            c.status(400);
+            return c.json({ message: "Invalid author ID" });
+        }
+
+        const prisma = new PrismaClient({
+            datasourceUrl: c.env.DATABASE_URL,
+        }).$extends(withAccelerate());
+
+        const existingUser = await prisma.user.findUnique({
+            where: { id: Number(authorId) }
+        });
+
+        if (!existingUser) {
+            c.status(400);
+            return c.json({ message: "Author does not exist" });
+        }
+
+        const blog = await prisma.posts.create({
+            data: {
+                title: body.title,
+                content: body.content,
+                authorId: Number(authorId),
+                date: new Date()
+            },
+        });
+
+        return c.json({ id: blog.id });
+
+    } catch (error) {
+        console.error("Error creating blog:", error);
+        c.status(500);
+        return c.json({ message: "blog post error", error });
+    }
+});
+
+
+
 
 blogRouter.put("/", async (c) => {
     const body = await c.req.json();
@@ -119,11 +142,10 @@ blogRouter.get("/bulk", async (c) => {
                 select: {
                     name: true
                 }
-            }
+            },
+            date: true,
         }
     });
-
-
 
     return c.json({
         blogs
@@ -151,7 +173,8 @@ blogRouter.get("/:id", async (c) => {
                     select: {
                         name: true
                     }
-                }
+                },
+                date: true
             }
         })
         return c.json({

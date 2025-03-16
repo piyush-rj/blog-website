@@ -4,8 +4,10 @@ interface BlogCardProps {
     authorName: string,
     title: string,
     content: string,
-    id: number
+    id: number,
+    date: string,
 }
+
 
 function Circle() {
     return (
@@ -13,12 +15,21 @@ function Circle() {
     )
 }
 
+
+
 const BlogCard = ({
     id,
     authorName,
     title,
     content,
+    date
 }: BlogCardProps) => {
+
+const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+});
 
 return <Link to={`/blog/${id}`}>
         <div className="p-5 border-b-[0.5px] border-gray-400 w-screen max-w-screen-md cursor-pointer">
@@ -34,7 +45,7 @@ return <Link to={`/blog/${id}`}>
                     <Circle/>
                 </div>
                 <div className=" font-light text-[16px] pl-2 text-slate-500 ">
-                    date
+                    posted on {formattedDate}
                 </div>
 
             </div>

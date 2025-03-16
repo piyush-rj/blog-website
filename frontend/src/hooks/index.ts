@@ -3,15 +3,17 @@ import { BACKEND_URL } from "../config";
 import axios from "axios";
 
 
+
 export interface Blog {
-    "content": string,
-    "title": string,
-    "id": number,
-    "author": {
-        name: string
-    },
-    "about": string
+    content: string;
+    title: string;
+    id: number;
+    date: string;
+    author: {
+        name: string;
+    };
 }
+
 
 
 export const useBlog = ({ id }: { id: string }) => {

@@ -5,7 +5,7 @@
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
-    "@piyush_26/blog-common": "^2.0.1",
+    "@piyush_26/blog-common": "^2.0.0",
     "@prisma/client": "^6.5.0",
     "@prisma/extension-accelerate": "^1.2.2",
     "cors": "^2.8.5",

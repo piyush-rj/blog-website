@@ -24,6 +24,7 @@ const Blogs = () => {
               authorName={blog.author.name.toUpperCase()}
               title={blog.title}
               content={blog.content}
+              date={blog.date}
             />
           ))}
         </div>
