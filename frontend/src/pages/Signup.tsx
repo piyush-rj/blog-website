@@ -41,8 +41,8 @@ const Signup = () => {
       <Navbar />
 
       {/* Main Container */}
-      <div className="h-screen w-full bg-black text-white flex justify-center items-center">
-        <div className="h-[540px] border border-white w-[420px] flex flex-col items-center py-4 px-8 mt-4">
+      <div className="h-screen w-full bg-black text-white flex justify-center items-center pb-[100px]">
+        <div className="h-[540px] border border-white w-[420px] flex flex-col items-center py-4 px-8 mt-">
           
           {/* Heading */}
           <h2 className="text-3xl font-semibold mt-3 mb-1">Create your account</h2>

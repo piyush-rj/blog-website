@@ -23,12 +23,12 @@ const Signin = () => {
             return alert("Error while signing in");
         }
     }
-    return (_jsxs("div", { children: [_jsx(Navbar, {}), _jsx("div", { className: "h-screen w-full bg-black text-white flex justify-center items-center px-6", children: _jsxs("div", { className: "w-full max-w-md border border-white p-6 rounded-md", children: [_jsx("h2", { className: "text-3xl font-semibold text-center mb-2", children: "Login to your account" }), _jsxs("div", { className: "text-lg text-center pb-4", children: [_jsx("span", { className: "text-gray-400", children: "New here? " }), _jsx(Link, { to: "/signup", className: "text-blue-400", children: "Sign up" })] }), _jsxs("div", { className: "flex flex-col gap-4", children: [_jsx(InputBox, { type: "text", heading: "Email-Id", placeholder: "Enter your email-id", onChange: (e) => setPostInputs((c) => ({
+    return (_jsxs("div", { children: [_jsx(Navbar, {}), _jsx("div", { className: "h-screen w-full bg-black text-white flex justify-center items-center pb-[140px] px-6", children: _jsxs("div", { className: " w-[420px] max-w-md border border-white p-6 ", children: [_jsx("h2", { className: "text-3xl font-semibold text-center mb-2 pt-2", children: "Login to your account" }), _jsxs("div", { className: "text-lg text-center pb-4", children: [_jsx("span", { className: "text-gray-400", children: "New here? " }), _jsx(Link, { to: "/signup", className: "text-blue-400", children: "Sign up" })] }), _jsxs("div", { className: "flex flex-col gap-2", children: [_jsx(InputBox, { type: "text", heading: "Email-Id", placeholder: "Enter your email-id", onChange: (e) => setPostInputs((c) => ({
                                         ...c,
                                         email: e.target.value,
                                     })) }), _jsx(InputBox, { type: "password", heading: "Password", placeholder: "Enter password", onChange: (e) => setPostInputs((c) => ({
                                         ...c,
                                         password: e.target.value,
-                                    })) })] }), _jsx("div", { className: "mt-6 flex justify-center", children: _jsx(SignupButton, { onClick: sendRequest, text: "SIGN IN" }) })] }) })] }));
+                                    })) })] }), _jsx("div", { className: "mt-12 mb-3 flex justify-center", children: _jsx(SignupButton, { onClick: sendRequest, text: "SIGN IN" }) })] }) })] }));
 };
 export default Signin;

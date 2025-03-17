@@ -35,11 +35,11 @@ const Signin = () => {
       <Navbar />
 
       {/* Main Container */}
-      <div className="h-screen w-full bg-black text-white flex justify-center items-center px-6">
-        <div className="w-full max-w-md border border-white p-6 rounded-md">
+      <div className="h-screen w-full bg-black text-white flex justify-center items-center pb-[140px] px-6">
+        <div className=" w-[420px] max-w-md border border-white p-6 ">
           
           {/* Heading */}
-          <h2 className="text-3xl font-semibold text-center mb-2">
+          <h2 className="text-3xl font-semibold text-center mb-2 pt-2">
             Login to your account
           </h2>
 
@@ -50,7 +50,7 @@ const Signin = () => {
           </div>
 
           {/* Input Fields */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
             <InputBox
               type="text"
               heading="Email-Id"
@@ -76,7 +76,7 @@ const Signin = () => {
           </div>
 
           {/* Sign In Button */}
-          <div className="mt-6 flex justify-center">
+          <div className="mt-12 mb-3 flex justify-center">
             <SignupButton onClick={ sendRequest } text="SIGN IN" />
           </div>
 
