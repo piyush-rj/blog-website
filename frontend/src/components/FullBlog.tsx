@@ -16,7 +16,7 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
       <Appbar />
       <div className="flex justify-center pt-[100px] px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 px-4 md:px-10 w-full max-w-screen-xl pt-12 gap-6">
-          {/* Blog Content */}
+          {/* blog content */}
           <div className="md:col-span-8">
             <div className="text-3xl md:text-5xl text-[#d5d5d5] font-extrabold break-words">
               {blog.title}
@@ -33,9 +33,9 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
             />
           </div>
 
-          {/* Author Section */}
-          <div className="md:col-span-4 pl-0 md:pl-5 text-white">
-            <span className="font-mono text-base md:text-lg">Author</span>
+          {/* author section */}
+          <div className="md:col-span-4 mt-9 md:mt-9 pl-0 md:pl-5 text-white place-self-start">
+          <span className="font-mono text-base md:text-lg">Author</span>
             <div className="flex flex-col">
               <div className="flex items-center text-[#afafaf]">
                 <Avatar name={blog.author?.name || "Anonymous"} size={8} />
