@@ -11,8 +11,9 @@ const Cursor = () => {
             gsap.to(trailPosition, {
                 x: e.clientX,
                 y: e.clientY,
-                duration: 0.2, // Smooth lag
+                duration: 0.1, // Smooth lag
                 onUpdate: () => setTrailPosition({ ...trailPosition }),
+                immediateRender: false, // Prevents GSAP from caching initial values
             });
         };
         window.addEventListener("mousemove", moveCursor);
