@@ -1,8 +1,7 @@
 # ByteWords is a blogging website like Medium
-_______________________________________________
+
 
 ## Tech Stack:
-______________
 1. **React** (frontend)
 2. **Cloudflare workers** (serverless backend)
 3. **Hono** (for backend because of cleaner syntax)
@@ -11,16 +10,14 @@ ______________
 6. **Postgres** (database)
 7. **Vercel** ( frontend deployment )
 
-_______________________________________________
 
 ## Features : 
-_____________
 ( **Authentication** ) : Signup, Signin and logout using jwt
 ( **Blogging** ) : Users can write, post and read blogs
-_______________________________________________
+
+**Progresss** -> Still left to add some features, search and filter, etc
 
 ## Getting Started : 
-____________________
 
 ( Login to Cloudflare workers )
 
