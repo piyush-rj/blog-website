@@ -24,7 +24,13 @@ const FullBlog = ({ blog }: { blog: Blog }) => {
             <div className="text-slate-600 pt-2">
               Posted on {formattedDate}
             </div>
-            <div className="pt-4 text-2xl text-[#bfbfbf]">{blog.content}</div>
+
+            <div
+              className="pt-4 text-2xl text-[#bfbfbf]"
+              dangerouslySetInnerHTML={{ __html: blog.content.replace(/\n/g, "<br>") }}
+            />
+
+
           </div>
           <div className="col-span-4 pl-5 text-white">
             <span className="font-mono">Author</span>
