@@ -1,4 +1,4 @@
-### ByteWords is a blogging website like Medium
+# ByteWords is a blogging website like Medium
 _______________________________________________
 
 ## Tech Stack:
@@ -30,10 +30,3 @@ cd project-directory
 npm install
 npm run dev
 npm run deploy
-
-
-
-
-
-
-
