@@ -16,7 +16,6 @@ const Signup = () => {
     async function sendRequest() {
         try {
             const response = await axios.post(`${BACKEND_URL}/api/v1/user/signup`, postInputs);
-            // Extract token correctly
             const jwt = response.data;
             localStorage.setItem("token", jwt);
             navigate("/blogs");

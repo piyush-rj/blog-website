@@ -3,7 +3,7 @@ import Navbar from "../HomePage/Navbar";
 import SignupButton from "../SignupPage/SignupButton";
 import InputBox from "../components/InputBox";
 import { SignupInput } from "@piyush_26/blog-common";
-import { useState } from "react";
+import { useState } from "react"
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 
@@ -18,14 +18,11 @@ const Signup = () => {
 
   async function sendRequest() {
     try {
-      const response = await axios.post(
-        `${BACKEND_URL}/api/v1/user/signup`,
+      const response = await axios.post(`${BACKEND_URL}/api/v1/user/signup`,
         postInputs
       );
   
-      // Extract token correctly
-      const jwt = response.data;
-  
+      const jwt = response.data;  
       localStorage.setItem("token", jwt);
       navigate("/blogs");
 

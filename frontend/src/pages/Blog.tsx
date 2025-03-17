@@ -8,7 +8,7 @@ const Blog = () => {
   const { loading, blog } = useBlog({
     id: id || ""
   });
-  if(loading || !blog){
+  if( loading || !blog) {
     return <div className="flex h-screen items-center justify-center">
       <SyncLoader/>
     </div>

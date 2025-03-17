@@ -77,7 +77,7 @@ const Signin = () => {
 
           {/* Sign In Button */}
           <div className="mt-6 flex justify-center">
-            <SignupButton onClick={sendRequest} text="SIGN IN" />
+            <SignupButton onClick={ sendRequest } text="SIGN IN" />
           </div>
 
         </div>

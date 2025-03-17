@@ -23,7 +23,6 @@ const Publish = () => {
         }
       });
       navigate(`/blog/${response.data.id}`)
-      alert("Blog published successfully!");
     } catch (error) {
       console.error("Error publishing blog:", error);
     }

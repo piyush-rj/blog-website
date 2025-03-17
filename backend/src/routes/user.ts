@@ -11,6 +11,7 @@ export const userRouter = new Hono<{
   };
 }>();
 
+
 userRouter.post("/signup", async (c) => {
 
   const body = await c.req.json();
@@ -37,13 +38,15 @@ userRouter.post("/signup", async (c) => {
       }
     })
 
-    const jwt = await sign({ id: user.id as number }, c.env.JWT_SECRET);
-  
+    const jwt = await sign({ 
+      id: user.id
+     }, c.env.JWT_SECRET);
+     
     return c.text(jwt)
-  } catch (error) {
-    console.log(error);
+
+  } catch (e) {
+    console.log(e);
     c.status(411)
-    console.log(error)
     return c.text("signup failed")
   }
 })
@@ -51,20 +54,20 @@ userRouter.post("/signup", async (c) => {
 userRouter.post("/signin", async (c) => {
   try {
     const body = await c.req.json();
-    console.log("Signin Request Body:", body); // Debugging request body
+    const { success } = signinInput.safeParse(body);
 
-    // Validate input using Zod
-    const validation = signinInput.safeParse(body);
-    if (!validation.success) {
-      c.status(400); // Bad Request
-      return c.json({ message: "Invalid credentials", errors: validation.error });
+    if(!success){
+      c.status(411)
+      return c.json({
+        message: "Inputs not correct"
+      })
     }
 
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate());
 
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findFirst({
       where: {
         email: body.email,
         password: body.password,
@@ -80,8 +83,7 @@ userRouter.post("/signin", async (c) => {
     return c.text( jwt );
 
   } catch (error) {
-    console.error("Signin Error:", error);
-    c.status(500);
+    c.status(411);
     return c.json({ 
       message: "Signin failed", 
     });
