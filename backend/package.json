@@ -10,6 +10,7 @@
     "@prisma/extension-accelerate": "^1.2.2",
     "cors": "^2.8.5",
     "hono": "^4.7.4",
+    "nodemailer": "^6.10.0",
     "prisma": "^6.5.0"
   },
   "devDependencies": {

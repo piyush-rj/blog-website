@@ -19,6 +19,7 @@ model User {
   name    String?
   password  String
   blogs Blog[]
+  likes BlogLike[]
 }
 
 model Blog {
@@ -29,4 +30,14 @@ model Blog {
   published Boolean  @default(false)
   author    User   @relation(fields: [authorId], references: [id])
   date      DateTime  @default(now())
+  likes     BlogLike[]
+}
+
+model BlogLike {
+  userId Int
+  blogId Int
+  user   User @relation(fields: [userId], references: [id])
+  blog   Blog @relation(fields: [blogId], references: [id])
+
+  @@id([userId, blogId]) 
 }

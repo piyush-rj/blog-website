@@ -29,10 +29,10 @@ const Publish = () => {
   };
 
   return (
-    <div className="bg-black h-screen w-full">
+    <div className="bg-black min-h-screen w-full">
       <Appbar />
-      <div className=" flex justify-center w-full pt-[100px]">
-        <div className="w-full max-w-screen-xl px-4">
+      <div className=" flex flex-col justify-center items-center w-full pt-[100px]">
+        <div className="w-full justify-center items-center max-w-screen-xl px-4">
           <input
             type="text"
             className="w-full border-b border-gray-300 text-[#d5d5d5] text-5xl"
