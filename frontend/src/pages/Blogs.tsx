@@ -16,6 +16,7 @@ const Blogs = () => {
     );
   }
 
+  // filter based on title
   const filteredBlogs = blogs.filter((blog) =>
     blog.title.toLowerCase().includes(search.toLowerCase())
   );
@@ -24,6 +25,7 @@ const Blogs = () => {
     <div className="bg-black min-h-screen w-full flex flex-col items-center">
       <Appbar />
 
+      {/* search Bar */}
       <div className="w-full mt-22 flex justify-center px-4">
         <input
           type="text"
@@ -34,18 +36,17 @@ const Blogs = () => {
         />
       </div>
 
+      {/* blog List */}
       <div className="w-full max-w-screen-md mt-6 flex flex-col items-center">
         {filteredBlogs.length > 0 ? (
           filteredBlogs.map((blog) => (
             <BlogCard
               key={blog.id}
               id={blog.id}
-              authorName={blog.author?.name.toUpperCase()}
+              authorName={blog.author.name.toUpperCase()}
               title={blog.title}
               content={blog.content}
               date={blog.date}
-              authorId={blog.authorId}
-              userId={blog.authorId} // Ensure this is passed
             />
           ))
         ) : (
